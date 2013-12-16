@@ -42,6 +42,12 @@ public class PostgresBillboardDAO extends PostgresDAO implements IBillboardDAO {
 			e.printStackTrace();
 			return null;
 		}
+		
+		try { 
+			if (conn != null) 
+				conn.close();
+		} 
+		catch (Exception e2) {};
 			
 		return new Chart(date, 's', chartData);
 			
@@ -69,6 +75,12 @@ public class PostgresBillboardDAO extends PostgresDAO implements IBillboardDAO {
 			e.printStackTrace();
 			return null;
 		}
+		
+		try { 
+			if (conn != null) 
+				conn.close();
+		} 
+		catch (Exception e2) {};
 			
 		return new Chart(date, 'a', chartData);
 		
